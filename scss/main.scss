@@ -1,11 +1,96 @@
-*{
-    box-sizing: border-box;
+@import "scss/fonts";
+
+
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  scroll-behavior: smooth;
 }
 
 body {
-    background-color: aqua;
- 
-    
+  
+  background-color: white;
+  width: 1371px;
+  height: auto;
+  font-family: $main-font;
+  color: whitesmoke;
+  background-repeat: no-repeat;
+  background-image: url("../assets/Image.png");
+  
+  
 }
 
+.intro {
+    margin: 0;
+    height: 100vh;
+    width: auto;
+    
+    .nav {
+        // margin: 0;
+        height: 93px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        box-shadow: 0 3px 6px rgba(0,0,0,.16);
 
+ 
+        .logo_container {
+            width:auto ;
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+            .logo_nav{
+                height: 35px;
+                width: 31px;
+            }
+            .span_fist{
+                font-size: 35px;
+                color: red;
+                padding-left: 20px;
+            }
+            .span_second {
+                font-size: 35px;
+            }
+           
+        }
+        .menu_container {
+            height: 93px;
+            width: auto;
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+            font-size: 16px;
+            
+            .menu {
+                display: flex;
+                justify-content: space-between;
+                
+                .menu_item {
+                    list-style: none;
+                
+                }
+            }
+
+        }
+    }
+    .title_container {
+        display: flex;
+        width: 100vw;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        span{
+            font-size:90px ;
+            font-weight: 900;
+            text-transform: uppercase;
+
+        }
+        p{
+            width: 100vw;
+            justify-content: center;
+        }
+        .button_container {
+            justify-content: center;
+        }
+    }
+}

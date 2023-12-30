@@ -6,10 +6,8 @@ body {
   scroll-behavior: smooth;
   color: #f5f5f5;
   flex-direction: column;
-  justify-content: center;
-  width: 1088px;
+  width: 1366px;
   height: 3008px;
-  padding-left: 30px;
   font-family: Nunito Sans, sans-serif;
   display: flex;
   top: 0;
@@ -29,6 +27,7 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 93px;
+  padding-right: 50px;
   display: flex;
   box-shadow: 0 3px 6px #00000029;
 }
@@ -66,16 +65,61 @@ body {
   display: flex;
 }
 
-.intro .nav .menu_container .menu {
+.intro .nav .menu_container .hamburger {
+  cursor: pointer;
+  float: right;
+  border-top: 4px solid #fff;
+  border-bottom: 4px solid #fff;
+  outline: none;
+  width: 30px;
+  height: 30px;
+  margin: 7px 0 0;
+  display: none;
+  position: relative;
+}
+
+.intro .nav .menu_container .hamburger .checkbox {
+  visibility: none;
+}
+
+.intro .nav .menu_container .hamburger:after, .intro .nav .menu_container .hamburger:before {
+  content: "";
+  background: #fff;
+  width: 30px;
+  height: 4px;
+  display: block;
+  position: absolute;
+  top: 10px;
+}
+
+@media screen and (width <= 900px) {
+  .intro .nav .menu_container .nav-list-link {
+    display: none;
+  }
+
+  .intro .nav .menu_container .nav {
+    justify-content: center;
+  }
+
+  .intro .nav .menu_container .hamburger {
+    display: block;
+  }
+
+  .intro .nav .menu_container .hamburger .checkbox {
+    display: none;
+  }
+}
+
+.intro .nav .menu {
   display: flex;
 }
 
-.intro .nav .menu_container .menu .menu_item {
+.intro .nav .menu .menu_item {
   justify-content: space-between;
   list-style-type: none;
 }
 
-.intro .nav .menu_container .menu .menu_item .nav-list-link {
+.intro .nav .menu .menu_item .nav-list-link {
   color: #fff;
   width: auto;
   height: 93px;
@@ -86,13 +130,13 @@ body {
   list-style: none;
 }
 
-.intro .nav .menu_container .menu .menu_item .nav-list-link:hover {
+.intro .nav .menu .menu_item .nav-list-link:hover {
   color: #000;
   background: #736f6f81 no-repeat padding-box padding-box;
   height: 93px;
 }
 
-.intro .title_container {
+.title_container {
   text-align: center;
   text-shadow: #28272c;
   flex-direction: column;
@@ -103,16 +147,17 @@ body {
   padding: 20px;
   display: flex;
   position: absolute;
-  top: 254px;
+  top: 200px;
+  left: 160px;
 }
 
-.intro .title_container span {
+.title_container span {
   text-transform: uppercase;
   font-size: 90px;
   font-weight: 900;
 }
 
-.intro .title_container p {
+.title_container p {
   text-align: center;
   flex-direction: column;
   justify-content: center;
@@ -121,13 +166,13 @@ body {
   font-size: 16px;
 }
 
-.intro .title_container .button_container {
+.title_container .button_container {
   text-align: center;
   justify-content: center;
   padding-top: 30px;
 }
 
-.intro .title_container .button_container .btn-1 {
+.title_container .button_container .btn-1 {
   color: #fff;
   text-transform: uppercase;
   background-color: red;
@@ -139,7 +184,7 @@ body {
   box-shadow: 0 3px 6px #ff00004d;
 }
 
-.intro .title_container .button_container .btn-2 {
+.title_container .button_container .btn-2 {
   color: red;
   text-transform: uppercase;
   background-color: #fff;
@@ -151,7 +196,7 @@ body {
   box-shadow: 0 3px 6px #ff00004d;
 }
 
-.intro .arrow_down_button {
+.arrow_down_button {
   z-index: 1;
   background-color: red;
   background-size: cover;
@@ -165,17 +210,28 @@ body {
   right: 656px;
 }
 
-h1 {
+.blog {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  top: 25px;
+}
+
+.blog h1 {
   color: #000;
   text-align: center;
   text-transform: uppercase;
   max-width: 240px;
-  margin: 100px auto;
+  margin: 70px auto;
   font-size: 30px;
-  position: relative;
+  position: absolute;
+  top: 0;
 }
 
-h1:after {
+.blog h1:after {
   content: "";
   background: red;
   width: 40px;
@@ -186,7 +242,7 @@ h1:after {
   left: -50px;
 }
 
-h1:before {
+.blog h1:before {
   content: "";
   background: red;
   width: 40px;
@@ -197,15 +253,6 @@ h1:before {
   right: -50px;
 }
 
-.blog {
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-  height: 80vh;
-  display: flex;
-  position: relative;
-}
-
 .blog .item_blog_container {
   color: #000;
   justify-content: space-around;
@@ -214,7 +261,7 @@ h1:before {
   height: 516px;
   display: flex;
   position: absolute;
-  top: -100px;
+  top: 100px;
 }
 
 .blog h2 {
@@ -237,38 +284,14 @@ h1:before {
   box-shadow: 0 3px 6px #ff00004d;
 }
 
-h3 {
-  color: #f5f5f5;
-  text-align: center;
-  text-transform: uppercase;
-  z-index: 1;
-  max-width: 240px;
-  margin: 100px auto;
-  font-size: 30px;
-  position: relative;
-  top: 50px;
-}
+@media screen and (width <= 900px) {
+  .blog .nav-list-link {
+    display: none;
+  }
 
-h3:after {
-  content: "";
-  background: red;
-  width: 45px;
-  height: 3px;
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: -50px;
-}
-
-h3:before {
-  content: "";
-  background: red;
-  width: 45px;
-  height: 3px;
-  display: block;
-  position: absolute;
-  top: 50%;
-  right: -50px;
+  .blog .hamburger {
+    display: block;
+  }
 }
 
 .service {
@@ -279,7 +302,39 @@ h3:before {
   height: 100vh;
   display: flex;
   position: relative;
-  top: 0;
+}
+
+.service h3 {
+  color: #f5f5f5;
+  text-align: center;
+  text-transform: uppercase;
+  max-width: 240px;
+  height: 40px;
+  margin: 50px auto;
+  font-size: 30px;
+  position: relative;
+}
+
+.service h3:after {
+  content: "";
+  background: red;
+  width: 45px;
+  height: 3px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: -50px;
+}
+
+.service h3:before {
+  content: "";
+  background: red;
+  width: 45px;
+  height: 3px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: -50px;
 }
 
 .service .service_container {
@@ -314,6 +369,113 @@ h3:before {
   height: 33px;
   font-size: 14px;
   box-shadow: 0 3px 6px #ff00004d;
+}
+
+.contact {
+  background-color: #fff;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  top: 0;
+}
+
+.contact h5 {
+  color: #000;
+  text-align: center;
+  text-transform: uppercase;
+  max-width: 240px;
+  height: 40px;
+  margin: 20px auto;
+  font-size: 30px;
+  position: relative;
+}
+
+.contact h5:after {
+  content: "";
+  background: red;
+  width: 40px;
+  height: 3px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: -50px;
+}
+
+.contact h5:before {
+  content: "";
+  background: red;
+  width: 40px;
+  height: 3px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: -50px;
+}
+
+.contact .contact_container {
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 904px;
+  height: 489px;
+  display: flex;
+  position: absolute;
+}
+
+.contact .contact_container .form_photo {
+  width: 444px;
+  height: 316.5px;
+}
+
+.contact .contact_container .form {
+  color: #000;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
+  width: 444px;
+  height: 347px;
+  display: flex;
+}
+
+.contact .contact_container .form_input {
+  border-radius: 5px;
+  width: 100%;
+  height: 25px;
+}
+
+.contact .contact_container .form_input:hover {
+  border: 2px solid red;
+}
+
+.contact .contact_container .textarea {
+  border-radius: 5px;
+  width: 444px;
+  height: 75px;
+}
+
+.contact .contact_container .textarea:hover {
+  border: 2px solid red;
+}
+
+.checkbox_label {
+  justify-content: space-between;
+  padding: 10px;
+  display: flex;
+}
+
+.checkbox_label .checkbox {
+  height: 10px;
+  margin-right: 20px;
+}
+
+.checkbox_label .label-text {
+  color: #b2b2b2;
+  letter-spacing: 0;
+  padding: 10px;
+  font-size: 10px;
 }
 
 /*# sourceMappingURL=index.574c7455.css.map */

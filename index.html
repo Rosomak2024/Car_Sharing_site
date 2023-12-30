@@ -21,10 +21,11 @@
           <span class="span_fist">Car</span>
           <span class="span_second"> Sharinig </span>
         </div>
+        
         <div class="menu_container">
           <ul class="menu">
             <li class="menu_item">
-              <a class="nav-list-link" href="#home">home</a>
+              <a class="nav-list-link" href="#intro">home</a>
             </li>
             <li class="menu_item">
               <a class="nav-list-link" href="#blog">blog</a>
@@ -36,7 +37,14 @@
               <a class="nav-list-link" href="#contact">contact</a>
             </li>
           </ul>
+          <div class="hamburger">
+            <input class="checkbox" type="checkbox" name="button" id="button">
+            <span class="hamburger_span"></span>
+            <span class="hamburger_span"></span>
+            <span class="hamburger_span"></span>
+          </div>
         </div>
+        
       </nav>
       <div class="title_container">
         <span>Car Sharing</span>
@@ -57,8 +65,8 @@
         alt="arrow down button"
       />
     </div>
-    <h1 class="title_blog">blog</h1>
-    <div class="blog">
+    <div class="blog" id="blog">
+      <h1 class="title_blog">blog</h1>
       <div class="item_blog_container">
         <div class="item_blog">
           <img src="./assets/photo1.png" alt="gearbox" />
@@ -95,8 +103,8 @@
         </div>
       </div>
     </div>
-    <h3>service</h3>
-    <div class="service">
+    <div class="service" id="service">
+      <h3>service</h3>
       <div class="service_container">
         <div class="item_service_box">
           <img src="./assets/mini1.png" alt="" class="mini1" />
@@ -142,6 +150,34 @@
           </p>
           <button class="btn-4">Read More</button>
         </div>
+      </div>
+    </div>
+
+    <div class="contact" id="contact">
+      <h5>Contact</h5>
+      <div class="contact_container">
+        <img
+          class="form_photo"
+          src="./assets/Form Photo.png"
+          alt="form photo"
+          class="contact_img"
+        />
+        <div class="form">
+          <input class="form_input" type="text" placeholder="type your name" />
+          <input class="form_input" type="text" placeholder="type your email" />
+          <textarea  class="textarea"  placeholder="type your message"></textarea>
+          <label class="checkbox_label">
+            <input type="checkbox" />
+            <span class="label-text">I hereby give consent for my personal data
+              included in my application to be processed for the purposes of the recruitment process under
+              the European Parliament’s and Council of the European Union Regulation on the Protection of
+              Natural Persons as of 27 April 2016, with regard to the processing of personal data and on
+              the free movement of such data, and repealing Directive 95/46/EC (Data Protection
+              Directive)</span>
+          </label>
+          <button>Send</button>
+        </div>
+
       </div>
     </div>
   </body>
